@@ -101,7 +101,6 @@ class CouplerBehavior extends ModelBehavior {
 	function beforeSave(&$Model) {
 		if (!$Model->exists()) {
 			if (!isset($Model->data[$Model->alias]['file'])) {
-				unset($Model->data[$Model->alias]);
 				return true;
 			}
 		} else {
