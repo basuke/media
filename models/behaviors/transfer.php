@@ -411,10 +411,8 @@ class TransferBehavior extends ModelBehavior {
 			$this->runtime[$Model->alias] = $this->_defaultRuntime;
 			$this->runtime[$Model->alias]['hasPerformed'] = true;
 		}
-		if (!$this->runtime[$Model->alias]['isPrepared']) {
-			if (!$this->_prepare($Model, $file)) {
-				return false;
-			}
+		if (!$this->_prepare($Model, $file)) {
+			return false;
 		}
 		extract($this->runtime[$Model->alias]);
 
